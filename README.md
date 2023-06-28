@@ -17,3 +17,4 @@ Mall-Le offers an intuitive and user-friendly interface, allowing shoppers to br
 With Mall-Le, you can enjoy secure and hassle-free transactions. The app integrates trusted payment gateways, ensuring the confidentiality and safety of your financial information. Real-time order tracking and updates keep you informed about your purchases, while a reliable customer support system is available to address any queries or concerns you may have.
 
 Mall-Le is poised to revolutionize the e-commerce industry with its cutting-edge technology stack and user-centric approach. Prepare to embark on a delightful shopping journey, where convenience, variety, and quality converge. Download Mall-Le today and join the future of online shopping!
+ChatGPT ^^!
