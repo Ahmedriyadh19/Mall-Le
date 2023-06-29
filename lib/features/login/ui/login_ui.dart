@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glass/glass.dart';
+import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/widget/login_form.dart';
 import 'package:mall_le/global_widget/background_image.dart';
 
@@ -23,7 +25,7 @@ class LoginUi extends StatelessWidget {
     return SizedBox(
       height: size.height * 0.25,
       width: size.width * 0.7,
-      child: LoginForm(),
+      child: const LoginForm(),
     );
   }
 
@@ -55,9 +57,12 @@ class LoginUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: BackgroundImage(
-        child: body(size: size),
+    return BlocProvider(
+      create: (context) => LoginBlocBloc(),
+      child: Scaffold(
+        body: BackgroundImage(
+          child: body(size: size),
+        ),
       ),
     );
   }
