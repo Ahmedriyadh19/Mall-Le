@@ -11,23 +11,28 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-        const TextInput(),
-        BlocBuilder<LoginBlocBloc, LoginBlocState>(
-          builder: (context, state) {
-            if (state is LoginCompleteState) {
-              return Text(state.message);
-            } else if (state is LoginErrorState) {
-              return Text(state.message);
-            } else {
-              return Container();
-            }
-          },
-        ),
-        const SubmitButton(),
-      ]),
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: size.height * 0.25,
+      width: size.width * 0.7,
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          const TextInput(),
+          BlocBuilder<LoginBlocBloc, LoginBlocState>(
+            builder: (context, state) {
+              if (state is LoginCompleteState) {
+                return Text(state.message);
+              } else if (state is LoginErrorState) {
+                return Text(state.message);
+              } else {
+                return Container();
+              }
+            },
+          ),
+          const SubmitButton(),
+        ]),
+      ),
     );
   }
 }
