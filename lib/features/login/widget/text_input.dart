@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatelessWidget {
-  const TextInput({super.key});
-
+  final TextEditingController controller;
+  const TextInput({super.key, required this.controller});
   InputDecoration boxDecoration() {
     return const InputDecoration(
       border: InputBorder.none,
@@ -26,7 +26,12 @@ class TextInput extends StatelessWidget {
         decoration: boxDecoration(),
         keyboardType: TextInputType.phone,
         style: const TextStyle(color: Colors.white),
+        controller: controller,
       ),
     );
+  }
+
+  getController() {
+    return controller;
   }
 }

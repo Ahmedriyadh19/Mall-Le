@@ -23,7 +23,7 @@ class LoginUi extends StatelessWidget {
     return SizedBox(
       height: size.height * 0.25,
       width: size.width * 0.7,
-      child: const LoginForm(),
+      child: LoginForm(),
     );
   }
 
