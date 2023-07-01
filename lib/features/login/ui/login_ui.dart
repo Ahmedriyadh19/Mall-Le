@@ -9,19 +9,23 @@ import 'package:mall_le/global_widget/logo_display.dart';
 class LoginUi extends StatelessWidget {
   const LoginUi({super.key});
 
-  ClipRRect box({required Size size}) {
-    return Container(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.5),
-        ),
-        child: const Column(
-          children: [
-            LogoDisplayBox(),
-            LoginForm(),
-          ],
-        )).asGlass(
-      tintColor: Colors.transparent,
-      clipBorderRadius: BorderRadius.circular(15.0),
+  Padding box({required Size size}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+      child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.5),
+          ),
+          child: ListView(
+            shrinkWrap: true,
+            children: const [
+              LogoDisplayBox(),
+              LoginForm(),
+            ],
+          )).asGlass(
+        tintColor: Colors.transparent,
+        clipBorderRadius: BorderRadius.circular(15.0),
+      ),
     );
   }
 

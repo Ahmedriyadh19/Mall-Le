@@ -7,7 +7,7 @@ class LogoDisplayBox extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.2,
+      height: size.height * 0.25,
       width: size.width * 0.7,
       decoration: const BoxDecoration(
         image: DecorationImage(
