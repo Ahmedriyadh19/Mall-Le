@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/events/login_event.dart';
 
-class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key});
+class LoginSubmitButton extends StatelessWidget {
+  const LoginSubmitButton({super.key});
 
   @override
   Widget build(BuildContext context) {

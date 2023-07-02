@@ -3,13 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/events/input_valid_event.dart';
 
-class TextInput extends StatelessWidget {
-  const TextInput({super.key});
+class LoginPhoneNumberInput extends StatelessWidget {
+  const LoginPhoneNumberInput({super.key});
   InputDecoration boxDecoration() {
     return const InputDecoration(
-      // border: InputBorder.none,
-      // focusedBorder: InputBorder.none,
-      enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.purple)),
+      border: InputBorder.none,
+      focusedBorder: InputBorder.none,
       errorBorder: InputBorder.none,
       disabledBorder: InputBorder.none,
       labelText: 'Phone Number',
@@ -23,7 +22,7 @@ class TextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: BlocBuilder<LoginBlocBloc, LoginBlocState>(
         builder: (context, state) {
           return TextField(
