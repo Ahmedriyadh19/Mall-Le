@@ -12,9 +12,10 @@ class LoginPhoneNumberInput extends StatelessWidget {
       errorBorder: InputBorder.none,
       disabledBorder: InputBorder.none,
       labelText: 'Phone Number',
+      hintText: 'Enter your phone number',
       prefixIcon: Icon(Icons.phone_android_rounded, color: Colors.white),
       labelStyle: TextStyle(color: Colors.white),
-      hintStyle: TextStyle(color: Colors.white),
+      hintStyle: TextStyle(color: Colors.grey),
       counterStyle: TextStyle(color: Colors.purple),
     );
   }

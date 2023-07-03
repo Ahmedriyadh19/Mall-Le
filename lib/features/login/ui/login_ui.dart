@@ -4,12 +4,11 @@ import 'package:glass/glass.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/widget/login_form_box.dart';
 import 'package:mall_le/global_widget/background_image.dart';
-import 'package:mall_le/global_widget/logo_display.dart';
 
 class LoginUi extends StatelessWidget {
   const LoginUi({super.key});
 
- Align body() {
+  Align body() {
     return Align(
       alignment: Alignment.center,
       child: Container(
@@ -20,7 +19,6 @@ class LoginUi extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: const [
-            LogoDisplayBox(),
             LoginFormBox(),
           ],
         ),

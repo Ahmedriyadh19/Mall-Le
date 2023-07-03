@@ -17,8 +17,9 @@ class LoginPasswordInput extends StatelessWidget {
         labelText: 'Password',
         prefixIcon: const Icon(Icons.password_rounded, color: Colors.white),
         labelStyle: const TextStyle(color: Colors.white),
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: Colors.grey),
         counterStyle: const TextStyle(color: Colors.purple),
+        hintText: 'Enter your password',
         suffixIcon: IconButton(
           icon: Icon(
             (state is LoginStateChange && state.isObscured) ? Icons.visibility_rounded : Icons.visibility_off_rounded,

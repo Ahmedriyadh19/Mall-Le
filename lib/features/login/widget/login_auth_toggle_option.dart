@@ -25,7 +25,7 @@ class AuthToggleOption extends StatelessWidget {
               color: Colors.grey,
             ),
             labels: const [
-              'OTP',
+              'OTP SMS',
               'Password',
             ],
             icons: const [
