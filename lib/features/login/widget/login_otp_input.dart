@@ -10,7 +10,6 @@ class LoginOtpInput extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Pinput(
         length: 5,
-        // androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsRetrieverApi,
       ),
     );
   }

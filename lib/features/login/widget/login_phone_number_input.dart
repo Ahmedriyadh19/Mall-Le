@@ -8,6 +8,7 @@ class LoginPhoneNumberInput extends StatelessWidget {
   InputDecoration boxDecoration() {
     return const InputDecoration(
       border: InputBorder.none,
+      //enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.purple)),
       focusedBorder: InputBorder.none,
       errorBorder: InputBorder.none,
       disabledBorder: InputBorder.none,
