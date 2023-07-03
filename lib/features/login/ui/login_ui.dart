@@ -9,8 +9,10 @@ import 'package:mall_le/global_widget/logo_display.dart';
 class LoginUi extends StatelessWidget {
   const LoginUi({super.key});
 
-  ClipRRect boxDesign() {
-    return Container(
+ Align body() {
+    return Align(
+      alignment: Alignment.center,
+      child: Container(
         width: 300,
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.5),
@@ -21,18 +23,11 @@ class LoginUi extends StatelessWidget {
             LogoDisplayBox(),
             LoginFormBox(),
           ],
-        )).asGlass(
-      tintColor: Colors.transparent,
-      clipBorderRadius: BorderRadius.circular(15.0),
-    );
-  }
-
-  Column body() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        boxDesign(),
-      ],
+        ),
+      ).asGlass(
+        tintColor: Colors.transparent,
+        clipBorderRadius: BorderRadius.circular(15.0),
+      ),
     );
   }
 

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/login_password_event.dart';
-import 'package:mall_le/features/login/states/login_password_obscured_state.dart';
+import 'package:mall_le/features/login/events/login_password_obscured_event.dart';
+import 'package:mall_le/features/login/events/password_input_valid_event.dart';
+import 'package:mall_le/features/login/states/login_states_changes.dart';
 
 class LoginPasswordInput extends StatelessWidget {
   const LoginPasswordInput({super.key});
@@ -20,11 +21,13 @@ class LoginPasswordInput extends StatelessWidget {
         counterStyle: const TextStyle(color: Colors.purple),
         suffixIcon: IconButton(
           icon: Icon(
-            (state is LoginPasswordObscuredState && state.isObscured) ? Icons.visibility_rounded : Icons.visibility_off_rounded,
+            (state is LoginStateChange && state.isObscured) ? Icons.visibility_rounded : Icons.visibility_off_rounded,
             color: Colors.white,
           ),
           onPressed: () {
-            context.read<LoginBlocBloc>().add(LoginPasswordObscuredEvent(true));
+            state is LoginStateChange
+                ? context.read<LoginBlocBloc>().add(LoginPasswordObscuredEvent(isObscured: !state.isObscured))
+                : context.read<LoginBlocBloc>().add(LoginPasswordObscuredEvent(isObscured: true));
           },
         ));
   }
@@ -38,7 +41,10 @@ class LoginPasswordInput extends StatelessWidget {
           return TextField(
             decoration: boxDecoration(state: state, context: context),
             style: const TextStyle(color: Colors.white),
-            onChanged: (value) {},
+            obscureText: state is LoginStateChange ? state.isObscured : true,
+            onChanged: (value) {
+              context.read<LoginBlocBloc>().add(PasswordInputValidationEvent(password: value));
+            },
           );
         },
       ),

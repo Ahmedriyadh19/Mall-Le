@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/input_valid_event.dart';
+import 'package:mall_le/features/login/events/phone_number_input_valid_event.dart';
 
 class LoginPhoneNumberInput extends StatelessWidget {
   const LoginPhoneNumberInput({super.key});
@@ -30,7 +30,7 @@ class LoginPhoneNumberInput extends StatelessWidget {
             keyboardType: TextInputType.phone,
             style: const TextStyle(color: Colors.white),
             onChanged: (value) {
-              context.read<LoginBlocBloc>().add(InputValidationEvent(value));
+              context.read<LoginBlocBloc>().add(InputPhoneNumberValidationEvent(phoneNumber: value));
             },
           );
         },

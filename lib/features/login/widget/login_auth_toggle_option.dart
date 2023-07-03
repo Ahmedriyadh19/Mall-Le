@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/events/auth_toggle_event.dart';
-import 'package:mall_le/features/login/states/auth_toggle_state.dart';
+import 'package:mall_le/features/login/states/login_states_changes.dart';
 
 class AuthToggleOption extends StatelessWidget {
   const AuthToggleOption({super.key});
@@ -17,7 +17,7 @@ class AuthToggleOption extends StatelessWidget {
           child: FlutterToggleTab(
             width: 65,
             borderRadius: 10,
-            selectedIndex: state is AuthSelectedState ? (state.option) : 0,
+            selectedIndex: state is LoginStateChange ? (state.option) : 0,
             selectedTextStyle: const TextStyle(
               color: Colors.white,
             ),
