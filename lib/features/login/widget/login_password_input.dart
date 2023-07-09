@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
 import 'package:mall_le/features/login/events/login_password_obscured_event.dart';
-import 'package:mall_le/features/login/events/password_input_valid_event.dart';
+import 'package:mall_le/features/login/events/login_password_input_valid_event.dart';
 import 'package:mall_le/features/login/states/login_states_changes.dart';
 
 class LoginPasswordInput extends StatelessWidget {
@@ -35,19 +35,22 @@ class LoginPasswordInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: BlocBuilder<LoginBlocBloc, LoginBlocState>(
-        builder: (context, state) {
-          return TextField(
-            decoration: boxDecoration(state: state, context: context),
-            style: const TextStyle(color: Colors.white),
-            obscureText: state is LoginStateChange ? state.isObscured : true,
-            onChanged: (value) {
-              context.read<LoginBlocBloc>().add(PasswordInputValidationEvent(password: value));
-            },
-          );
-        },
+    return SizedBox(
+      height: 80,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: BlocBuilder<LoginBlocBloc, LoginBlocState>(
+          builder: (context, state) {
+            return TextField(
+              decoration: boxDecoration(state: state, context: context),
+              style: const TextStyle(color: Colors.white),
+              obscureText: state is LoginStateChange ? state.isObscured : true,
+              onChanged: (value) {
+                context.read<LoginBlocBloc>().add(PasswordInputValidationEvent(password: value));
+              },
+            );
+          },
+        ),
       ),
     );
   }

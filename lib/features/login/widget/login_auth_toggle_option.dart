@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/auth_toggle_event.dart';
+import 'package:mall_le/features/login/events/login_auth_toggle_event.dart';
 import 'package:mall_le/features/login/states/login_states_changes.dart';
 
 class AuthToggleOption extends StatelessWidget {
