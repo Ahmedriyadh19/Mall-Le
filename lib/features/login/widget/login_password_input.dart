@@ -43,6 +43,7 @@ class LoginPasswordInput extends StatelessWidget {
           builder: (context, state) {
             return TextField(
               decoration: boxDecoration(state: state, context: context),
+              onTapOutside: (event) => FocusScope.of(context).unfocus(),
               style: const TextStyle(color: Colors.white),
               obscureText: state is LoginStateChange ? state.isObscured : true,
               onChanged: (value) {

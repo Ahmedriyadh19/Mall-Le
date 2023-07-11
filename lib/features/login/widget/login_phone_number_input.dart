@@ -29,6 +29,7 @@ class LoginPhoneNumberInput extends StatelessWidget {
         builder: (context, state) {
           return TextField(
             decoration: boxDecoration(),
+            onTapOutside: (event) => FocusScope.of(context).unfocus(),
             keyboardType: TextInputType.phone,
             style: const TextStyle(color: Colors.white),
             onChanged: (value) {

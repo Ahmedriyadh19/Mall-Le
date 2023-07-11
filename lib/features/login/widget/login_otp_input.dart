@@ -15,6 +15,7 @@ class LoginOtpInput extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Pinput(
           length: 5,
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
           onCompleted: (value) {
             context.read<LoginBlocBloc>().add(LoginOtpCompleteEvent(otp: int.parse(value)));
           },
