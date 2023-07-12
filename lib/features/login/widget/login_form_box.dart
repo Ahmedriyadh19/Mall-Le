@@ -23,10 +23,10 @@ class LoginFormBox extends StatelessWidget {
             const LoginPhoneNumberInput(),
             state is LoginStateChange && state.option == 1 //option 1 is password+  option 0 is otp
                 ? const LoginPasswordInput()
-                : state is LoginStateChange && state.isSend == true  // is true when otp is send
+                : state is LoginStateChange && state.isSend == true // is true when otp is send
                     ? const LoginOtpInput()
                     : const LoginRequestOtpButton(),
-            if (state is LoginStateChange && state.option == 1) const LoginSubmitButton(),
+            if ((state is LoginStateChange && state.option == 1) || (state is LoginStateChange && state.isSend == true)) const LoginSubmitButton(),
           ],
         );
       },
