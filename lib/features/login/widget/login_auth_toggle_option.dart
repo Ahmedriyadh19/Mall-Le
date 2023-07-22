@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/login_auth_toggle_event.dart';
+import 'package:mall_le/features/login/events/button_auth_toggle_login_method_event.dart';
 import 'package:mall_le/features/login/states/login_states_changes.dart';
 
 class AuthToggleOption extends StatelessWidget {
@@ -30,10 +30,10 @@ class AuthToggleOption extends StatelessWidget {
             ],
             icons: const [
               Icons.sms_rounded,
-              Icons.password_rounded,
+              Icons.lock_person_rounded,
             ],
             selectedLabelIndex: (index) {
-              context.read<LoginBlocBloc>().add(LoginAuthToggleEvent(option: index));
+              context.read<LoginBlocBloc>().add(ButtonAuthToggleLoginMethodEvent(option: index));
             },
             marginSelected: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
           ),

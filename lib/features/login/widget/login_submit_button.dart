@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/login_button_event.dart';
+import 'package:mall_le/features/login/events/button_login_process_event.dart';
 
 class LoginSubmitButton extends StatelessWidget {
   const LoginSubmitButton({super.key});
@@ -15,7 +15,7 @@ class LoginSubmitButton extends StatelessWidget {
           Icons.arrow_forward_rounded,
         ),
         onPressed: () {
-          context.read<LoginBlocBloc>().add(LoginButtonEvent());
+          context.read<LoginBlocBloc>().add(ButtonLoginProcessEvent());
         },
       ),
     );

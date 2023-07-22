@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
+import 'package:mall_le/features/login/events/checker_phone_number_input_valid_event.dart';
 
 class LoginPhoneNumberInput extends StatelessWidget {
   const LoginPhoneNumberInput({super.key});
@@ -15,7 +16,7 @@ class LoginPhoneNumberInput extends StatelessWidget {
       prefixIcon: Icon(Icons.phone_android_rounded, color: Colors.white),
       labelStyle: TextStyle(color: Colors.white),
       hintStyle: TextStyle(color: Colors.grey),
-      counterStyle: TextStyle(color: Colors.purple),
+      counterStyle: TextStyle(color: Colors.white),
     );
   }
 
@@ -28,10 +29,21 @@ class LoginPhoneNumberInput extends StatelessWidget {
           child: IntlPhoneField(
             decoration: boxDecoration(),
             initialCountryCode: 'YE',
-            dropdownTextStyle: const TextStyle(color: Colors.white),
+            dropdownTextStyle: const TextStyle(color: Colors.white, fontSize: 15),
+            showDropdownIcon: false,
             dropdownIcon: const Icon(Icons.arrow_drop_down, color: Colors.white),
             style: const TextStyle(color: Colors.white),
-           // countries: myCountries
+            cursorColor: Colors.white,
+            
+            onChanged: (value) {
+              try {
+                if (value.isValidNumber()) {
+                  context.read<LoginBlocBloc>().add(CheckerPhoneNumberValidationEvent(phoneNumber: value.completeNumber));
+                }
+              } catch (_) {
+                
+              }
+            },
           ),
         );
       },
