@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:mall_le/features/login/events/button_auth_toggle_login_method_event.dart';
-import 'package:mall_le/features/login/events/button_login_process_event.dart';
-import 'package:mall_le/features/login/events/checker_otp_login_event.dart';
-import 'package:mall_le/features/login/events/visibility_password_option_event.dart';
-import 'package:mall_le/features/login/events/request_send_otp_event.dart';
-import 'package:mall_le/features/login/states/login_states_changes.dart';
+
+import 'events/button_auth_toggle_login_method_event.dart';
+import 'events/button_login_process_event.dart';
+import 'events/checker_otp_login_event.dart';
+import 'events/request_send_otp_event.dart';
+import 'events/visibility_password_option_event.dart';
+import 'states/login_states_changes.dart';
 
 part 'login_bloc_event.dart';
 part 'login_bloc_state.dart';

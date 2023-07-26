@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mall_le/features/login/bloc/events/checker_password_input_login_event.dart';
+import 'package:mall_le/features/login/bloc/events/visibility_password_option_event.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/visibility_password_option_event.dart';
-import 'package:mall_le/features/login/events/checker_password_input_login_event.dart';
-import 'package:mall_le/features/login/states/login_states_changes.dart';
+import 'package:mall_le/features/login/bloc/states/login_states_changes.dart';
 
 class LoginPasswordInput extends StatelessWidget {
   const LoginPasswordInput({super.key});
@@ -35,23 +35,25 @@ class LoginPasswordInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: BlocBuilder<LoginBlocBloc, LoginBlocState>(
-          builder: (context, state) {
-            return TextField(
-              decoration: boxDecoration(state: state, context: context),
-              onTapOutside: (event) => FocusScope.of(context).unfocus(),
-              obscureText: state is LoginStateChange ? state.isObscured : true,
-              style: const TextStyle(color: Colors.white),
-              onChanged: (value) {
-                context.read<LoginBlocBloc>().add(CheckerPasswordInputLoginEvent(password: value));
-              },
-            );
-          },
-        ),
+    return Container(
+      padding: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.grey),
+      ),
+      child: BlocBuilder<LoginBlocBloc, LoginBlocState>(
+        builder: (context, state) {
+          return TextField(
+            decoration: boxDecoration(state: state, context: context),
+            onTapOutside: (event) => FocusScope.of(context).unfocus(),
+            obscureText: state is LoginStateChange ? state.isObscured : true,
+            style: const TextStyle(color: Colors.white),
+            onChanged: (value) {
+              context.read<LoginBlocBloc>().add(CheckerPasswordInputLoginEvent(password: value));
+            },
+          );
+        },
       ),
     );
   }

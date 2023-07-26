@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
+import 'package:mall_le/features/login/bloc/events/button_auth_toggle_login_method_event.dart';
 import 'package:mall_le/features/login/bloc/login_bloc_bloc.dart';
-import 'package:mall_le/features/login/events/button_auth_toggle_login_method_event.dart';
-import 'package:mall_le/features/login/states/login_states_changes.dart';
+import 'package:mall_le/features/login/bloc/states/login_states_changes.dart';
 
 class AuthToggleOption extends StatelessWidget {
   const AuthToggleOption({super.key});
@@ -13,9 +13,9 @@ class AuthToggleOption extends StatelessWidget {
     return BlocBuilder<LoginBlocBloc, LoginBlocState>(
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(10),
           child: FlutterToggleTab(
-            width: 65,
+            width: 68,
             borderRadius: 10,
             selectedIndex: state is LoginStateChange ? (state.option) : 0,
             selectedTextStyle: const TextStyle(

@@ -13,7 +13,7 @@ class LoginUi extends StatelessWidget {
       alignment: Alignment.center,
       child: Container(
         width: 300,
-        height: 350,
+        height: 400,
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.5),
         ),
