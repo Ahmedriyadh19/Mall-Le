@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mall_le/features/login_page/ui/login_page_ui.dart';
+import 'package:mall_le/features/home_page/ui/home_page_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrangeAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent, secondary: Colors.purple),
         useMaterial3: true,
       ),
-      home: const LoginPageUI(),
+      home: const HomePageUI(),
     );
   }
 }

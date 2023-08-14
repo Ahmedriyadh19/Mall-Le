@@ -20,22 +20,18 @@ class MyBottomNavBar extends StatelessWidget {
             SalomonBottomBarItem(
               icon: const Icon(Icons.home),
               title: const Text("Home"),
-              selectedColor: Colors.deepOrangeAccent,
             ),
             SalomonBottomBarItem(
               icon: const Icon(Icons.search),
               title: const Text("Search"),
-              selectedColor: Colors.deepOrangeAccent,
             ),
             SalomonBottomBarItem(
               icon: const Icon(Icons.favorite_rounded),
               title: const Text("Likes"),
-              selectedColor: Colors.deepOrangeAccent,
             ),
             SalomonBottomBarItem(
               icon: const Icon(Icons.person),
               title: const Text("Profile"),
-              selectedColor: Colors.deepOrangeAccent,
             ),
           ],
         );
