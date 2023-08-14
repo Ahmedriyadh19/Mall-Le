@@ -8,10 +8,28 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         child: Column(children: [
-      const UserAccountsDrawerHeader(
-        accountName: Text('User Name'),
-        accountEmail: Text('Email'),
-        otherAccountsPictures: [],
+      Container(
+        height: MediaQuery.of(context).size.height * 0.35,
+        color: Theme.of(context).colorScheme.primary,
+        child: Stack(children: [
+          const Center(
+            child: Text(
+              'Mall Le',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: IconButton(
+              icon: const Icon(Icons.edit, color: Colors.white,),
+              onPressed: () {},
+            ),
+          )
+        ]),
       ),
       const ListTile(
         leading: Icon(Icons.home),
@@ -22,7 +40,7 @@ class MyDrawer extends StatelessWidget {
       const Divider(),
       IconButton(
         onPressed: () {
-           Navigator.pushReplacement(
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (_) => const LoginPageUI()),
           );

@@ -22,12 +22,12 @@ class MyBottomNavBar extends StatelessWidget {
               title: const Text("Home"),
             ),
             SalomonBottomBarItem(
-              icon: const Icon(Icons.search),
-              title: const Text("Search"),
+              icon: const Icon(Icons.history_outlined),
+              title: const Text("Order History"),
             ),
             SalomonBottomBarItem(
-              icon: const Icon(Icons.favorite_rounded),
-              title: const Text("Likes"),
+              icon: const Icon(Icons.delivery_dining_rounded),
+              title: const Text("Track Order"),
             ),
             SalomonBottomBarItem(
               icon: const Icon(Icons.person),

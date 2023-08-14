@@ -16,7 +16,7 @@ class MyBadges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Badge(
-      label: Text(count < 21 ? '$count' : '21+'),
+      label: Text(count < 9 ? '$count' : '9+'),
       isLabelVisible: count > 0 ? true : false,
       child: IconButton(
         onPressed: () {
